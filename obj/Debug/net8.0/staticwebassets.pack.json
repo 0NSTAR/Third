@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\PC\\Documents\\Demeyev\\Yandex.Cargo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Yandex.Cargo.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Yandex.Cargo.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\Demeyev\\Yandex.Cargo\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\Demeyev\\Yandex.Cargo\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\Demeyev\\Yandex.Cargo\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\Demeyev\\Yandex.Cargo\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Yandex.Cargo.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Yandex.Cargo.props",
+      "PackagePath": "build\\Yandex.Cargo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Yandex.Cargo.props",
+      "PackagePath": "buildMultiTargeting\\Yandex.Cargo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Yandex.Cargo.props",
+      "PackagePath": "buildTransitive\\Yandex.Cargo.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
