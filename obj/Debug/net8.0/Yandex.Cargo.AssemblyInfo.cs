@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("9b0a7829-c8e9-4c1b-ac40-35a2f6aa8a13")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Yandex.Cargo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec8194a389820f5f5c1710d2326583ceeef8ae1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Yandex.Cargo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Yandex.Cargo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

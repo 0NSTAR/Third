@@ -1,17 +1,22 @@
-﻿namespace Yandex.Cargo.Models {
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Yandex.Cargo.Models {
     public class User {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id {
             get; set;
         }
-
-        public int Type {
+        [Required]
+        public string Type {
             get; set;
         }
-
-        public string? Login {
+        [Required]
+        public string Login {
             get; set;
         }
-
+        [Required]
         public string Password {
             get; set;
         }

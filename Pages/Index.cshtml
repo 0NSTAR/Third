@@ -5,3 +5,15 @@
 <div class="text-center">
     <h1 class="display-3">Orders List</h1>
 </div>
+
+<table>
+    <tr><th>Id</th><th>Type</th><th>Login</th><th>Password</th></tr>
+    @foreach(var user in Model.Users) {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.Type</td>
+            <td>@user.Login</td>
+            <td>@user.Password</td>
+        </tr>
+    }
+</table>

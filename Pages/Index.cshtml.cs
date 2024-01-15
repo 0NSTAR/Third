@@ -1,15 +1,18 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using Yandex.Cargo.Models;
 
 namespace Yandex.Cargo.Pages {
     public class IndexModel : PageModel {
-        private readonly ILogger<IndexModel> _logger;
+        ApplicationContext context;
 
-        public IndexModel(ILogger<IndexModel> logger) {
-            _logger = logger;
+        public List<User> Users { get; private set; } = new();
+
+        public IndexModel(ApplicationContext db) {
+            context = db;
         }
-
         public void OnGet() {
-
+            Users = context.Users.AsNoTracking().ToList();
         }
     }
 }
