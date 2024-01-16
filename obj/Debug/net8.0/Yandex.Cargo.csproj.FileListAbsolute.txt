@@ -77,8 +77,6 @@ C:\Users\PC\Documents\Demeyev\Yandex.Cargo\Yandex.Cargo\bin\Debug\net8.0\Microso
 C:\Users\PC\Documents\Demeyev\Yandex.Cargo\Yandex.Cargo\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\PC\Documents\Demeyev\Yandex.Cargo\Yandex.Cargo\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\PC\Documents\Demeyev\Yandex.Cargo\Yandex.Cargo\bin\Debug\net8.0\Mono.TextTemplating.dll
-C:\Users\PC\Documents\Demeyev\Yandex.Cargo\Yandex.Cargo\bin\Debug\net8.0\Npgsql.dll
-C:\Users\PC\Documents\Demeyev\Yandex.Cargo\Yandex.Cargo\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\PC\Documents\Demeyev\Yandex.Cargo\Yandex.Cargo\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\PC\Documents\Demeyev\Yandex.Cargo\Yandex.Cargo\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 C:\Users\PC\Documents\Demeyev\Yandex.Cargo\Yandex.Cargo\bin\Debug\net8.0\System.Composition.Convention.dll

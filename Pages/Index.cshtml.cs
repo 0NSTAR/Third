@@ -7,12 +7,14 @@ namespace Yandex.Cargo.Pages {
         ApplicationContext context;
 
         public List<User> Users { get; private set; } = new();
+        public List<Order> Orders { get; private set; } = new();
 
         public IndexModel(ApplicationContext db) {
             context = db;
         }
         public void OnGet() {
             Users = context.Users.AsNoTracking().ToList();
+            Orders = context.Orders.AsNoTracking().ToList();
         }
     }
 }

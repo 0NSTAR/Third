@@ -6,15 +6,21 @@ namespace Yandex.Cargo.Pages {
     [IgnoreAntiforgeryToken]
     public class CreateModel : PageModel {
         ApplicationContext context;
+
         [BindProperty]
-        public User Person { get; set; } = new();
+        public Order Order { get; set; } = new();
         public CreateModel(ApplicationContext db) {
             context = db;
         }
         public async Task<IActionResult> OnPostAsync() {
-            context.Users.Add(Person);
-            await context.SaveChangesAsync();
-            return RedirectToPage("Index");
+            try {
+                context.Orders.Add(Order);
+                await context.SaveChangesAsync();
+                return RedirectToPage("Index");
+            } catch(Exception) {
+                ModelState.AddModelError("", "An error occurred while processing your request.");
+                return Page();
+            }
         }
     }
 }
