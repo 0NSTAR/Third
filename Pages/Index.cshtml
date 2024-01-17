@@ -4,28 +4,87 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="text-center mb-5">
-    <h1 class="display-3">Orders List</h1>
-</div>
-<table class="table table-sm table-striped">
-    <thead class="table-secondary pd-3">
-        <tr>
-            <th class="p-2 ps-5" scope="col">From</th>
-            <th class="p-2" scope="col">To</th>
-            <th class="p-2" scope="col">Type</th>
-            <th class="p-2" scope="col">Date</th>
-            <th class="p-2" scope="col">Description</th>
-        </tr>
-    </thead>
-    <tbody class="p-5">
-        @foreach(var order in Model.Orders) {
+@if(@Model.Orders != null) {
+    <div class="text-center mb-5">
+        <h1 class="display-3">Orders List</h1>
+    </div>
+
+    <table class="table table-hover">
+        <thead class="pd-3">
             <tr>
-                <td class="p-2">@order.From</td>
-                <td class="p-2">@order.To</td>
-                <td class="p-2">@order.Type</td>
-                <td class="p-2">@order.Date.ToString("yyyy-MM-dd")</td>
-                <td class="p-2">@order.Description</td>
+                <th class="p-2" scope="col">From</th>
+                <th class="p-2" scope="col">To</th>
+                <th class="p-2" scope="col">Type</th>
+                <th class="p-2" scope="col">Date</th>
+                <th class="p-2" scope="col">Description</th>
+                <th class="p-2" scope="col">State</th>
+                <th class="p-2" scope="col">Edit</th>
+                <th class="p-2" scope="col">Delete</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody class="table-group-divider p-5">
+            @foreach (var order in Model.Orders) {
+                switch (order.State) {
+                    case "on the way":
+                        <tr>
+                            <td class="p-2">@order.From</td>
+                            <td class="p-2">@order.To</td>
+                            <td class="p-2">@order.Type</td>
+                            <td class="p-2">@order.Date.ToString("yyyy-MM-dd")</td>
+                            <td class="p-2">@order.Description</td>
+                            <td class="p-2">@order.State</td>
+                            <form method="post">
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Canceling order</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure want to cancel this order?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button class="btn btn-secondary" type="submit" asp-page-handler="delete" asp-route-id="@order.Id">Enter</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <td><a asp-page="Edit" class="btn btn-secondary" asp-route-id="@order.Id">Edit</a></td>
+                            </form>
+                            <td>
+                                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Cancel
+                                </button>
+                            </td>
+                        </tr>
+                        break;
+                    case "in processing":
+                        <tr>
+                            <td class="p-2">@order.From</td>
+                            <td class="p-2">@order.To</td>
+                            <td class="p-2">@order.Type</td>
+                            <td class="p-2">@order.Date.ToString("yyyy-MM-dd")</td>
+                            <td class="p-2">@order.Description</td>
+                            <td class="p-2">@order.State</td>
+                            <form method="post">
+                            <td class="px-4"><a asp-page="Edit" asp-route-id="@order.Id"><i class="bi bi-pencil"></i></a></td>
+
+                            <td><button class="btn btn-secondary" type="submit" asp-page-handler="delete" asp-route-id="@order.Id">Delete</button></td>
+                            </form>
+
+                        </tr>
+                    break;
+                }
+            }
+        </tbody>
+    </table>
+} else {
+    <div class="text-center mb-5">
+        <h2 class="display-3">Nothing to view</h2>
+    </div>
+}
+
+
+

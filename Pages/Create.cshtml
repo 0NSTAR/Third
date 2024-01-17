@@ -1,58 +1,41 @@
 ﻿@page
 @model CreateModel
 @{ViewData["Title"] = "Create Order";}
-
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
 <div class="text-center">
     <h1 class="display-2 mb-5">Create order</h1>
 </div>
 
-<form method="post" class="was-validated d-block mx-auto col-md-5" asp-page="Create">
-    <div class="form-floating mb-3">
-        <input asp-for="Order.From" type="text" class="form-control" name="From" id="From" required>
+<form method="post" class="d-block mx-auto col-md-5" asp-page="Edit">
+    <div class="form-group mb-3">
+        <input asp-for="Order.From" class="form-control" placeholder="From..."/>
         <span asp-validation-for="Order.From" class="text-danger"></span>
-        <label asp-for ="Order.From" for="From">From</label>
-        <div class="invalid-feedback">
-            Please enter a place.
-        </div>
     </div>
-
-    <div class="form-floating mb-3">
-        <input asp-for="Order.To" type="text" class="form-control" name="To" id="To" required>
+    <div class="form-group mb-3">
+        <input asp-for="Order.To" class="form-control" placeholder="To..." />
         <span asp-validation-for="Order.To" class="text-danger"></span>
-        <label for="To">To</label>
-        <div class="invalid-feedback">
-            Please enter a place.
-        </div>
     </div>
-
-    <div class="form-floating mb-3">
-        <input asp-for="Order.Type" type="text" class="form-control" name="Type" id="Type" required>
-        <span asp-validation-for="Order.Type" class="text-danger"></span>
-        <label for="Type">Type</label>
-        <div class="invalid-feedback">
-            Please enter a type of your vehicle.
-        </div>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input asp-for="Order.Date" type="date" class="form-control" name="Date" id="Date" required/>
+        <select class="form-select mb-3" name="Order.Type" aria-label="Type...">
+            <span asp-validation-for="Order.Type" class="text-danger"></span>
+            <option value="Small">Small (20kg)</option>
+            <option value="Middle">Middle (100kg)</option>
+            <option value="Big">Big (More than 200kg)</option>
+        </select>
+    <div class="form-group mb-3">
+        <input asp-for="Order.Date" class="form-control" id="Date" placeholder="Date..." />
         <span asp-validation-for="Order.Date" class="text-danger"></span>
-        <label for="Date">Date</label>
-        <div class="invalid-feedback">
-            Please enter a date when cargo should arrive.
-        </div>
     </div>
-
-    <div class="form-floating mb-3">
-        <textarea asp-for="Order.Description" class="form-control" aria-label="Description" name="Description" id="Description" required></textarea>
+    <div class="form-group mb-3">
+        <textarea asp-for="Order.Description" class="form-control" placeholder="Description..."></textarea>
         <span asp-validation-for="Order.Description" class="text-danger"></span>
-        <label for="Description">Description</label>
-        <div class="invalid-feedback">
-            Please enter something about your cargo.
-        </div>
     </div>
-
-    <button type="submit" class="btn btn-light">Submit</button>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-secondary" />
+    </div>
 </form>
 
 <script>

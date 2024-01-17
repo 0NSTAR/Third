@@ -1,0 +1,41 @@
+﻿@page "{id:int}"
+
+@model Yandex.Cargo.Pages.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="text-center">
+    <h1 class="display-2 mb-5">Edit order</h1>
+</div>  
+
+<form method="post" class="d-block mx-auto col-md-5" asp-page="Edit">
+    <div class="form-group mb-3">
+        <input asp-for="Order.From" class="form-control" placeholder="From..." />
+        <span asp-validation-for="Order.From" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <input asp-for="Order.To" class="form-control" placeholder="To..." />
+        <span asp-validation-for="Order.To" class="text-danger"></span>
+    </div>
+    <select class="form-select mb-3" name="Order.Type" aria-label="Type...">
+        <span asp-validation-for="Order.Type" class="text-danger"></span>
+        <option value="Small">Small (20kg)</option>
+        <option value="Middle">Middle (100kg)</option>
+        <option value="Big">Big (More than 200kg)</option>
+    </select>
+    <div class="form-group mb-3">
+        <input asp-for="Order.Date" class="form-control" id="Date" placeholder="Date..." />
+        <span asp-validation-for="Order.Date" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <textarea asp-for="Order.Description" class="form-control" placeholder="Description..."></textarea>
+        <span asp-validation-for="Order.Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn btn-secondary" />
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

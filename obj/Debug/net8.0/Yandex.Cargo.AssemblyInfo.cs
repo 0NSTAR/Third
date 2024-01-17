@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Yandex.Cargo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3e76e49a170f681990b494f4736ddc5cdd59bc2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e8bc4e7acddf4abf3e46256331fd9b80221504c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Yandex.Cargo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Yandex.Cargo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
