@@ -22,6 +22,7 @@ namespace Yandex.Cargo.Models {
         }
 
         [Required]
+        [StringLength(8, MinimumLength = 4)]
         public string Type {
             get; set;
         }

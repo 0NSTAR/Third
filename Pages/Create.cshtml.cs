@@ -13,14 +13,9 @@ namespace Yandex.Cargo.Pages {
             context = db;
         }
         public async Task<IActionResult> OnPostAsync() {
-            try {
-                context.Orders.Add(Order);
-                await context.SaveChangesAsync();
-                return RedirectToPage("Index");
-            } catch(Exception) {
-                ModelState.AddModelError("", "An error occurred while processing your request.");
-                return Page();
-            }
+            context.Orders.Add(Order);
+            await context.SaveChangesAsync();
+            return RedirectToPage("Index");
         }
     }
 }

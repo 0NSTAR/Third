@@ -4,28 +4,27 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
+<div class="text-center mb-5">
     <h1 class="display-3">Orders List</h1>
 </div>
-<table class="table">
-    <thead>
+<table class="table table-sm table-striped">
+    <thead class="table-secondary pd-3">
         <tr>
-            <th scope="col">From</th>
-            <th scope="col">To</th>
-            <th scope="col">Type</th>
-            <th scope="col">Date</th>
-            <th scope="col">Description</th>
-            <th scope="col">User</th>
+            <th class="p-2 ps-5" scope="col">From</th>
+            <th class="p-2" scope="col">To</th>
+            <th class="p-2" scope="col">Type</th>
+            <th class="p-2" scope="col">Date</th>
+            <th class="p-2" scope="col">Description</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="p-5">
         @foreach(var order in Model.Orders) {
             <tr>
-                <td>@order.From</td>
-                <td>@order.To</td>
-                <td>@order.Type</td>
-                <td>@order.Date</td>
-                <td>@order.Description</td>
+                <td class="p-2">@order.From</td>
+                <td class="p-2">@order.To</td>
+                <td class="p-2">@order.Type</td>
+                <td class="p-2">@order.Date.ToString("yyyy-MM-dd")</td>
+                <td class="p-2">@order.Description</td>
             </tr>
         }
     </tbody>
