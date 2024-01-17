@@ -46,5 +46,9 @@ namespace Yandex.Cargo.Models {
         public int ExecuterId {
             get; set;
         }
+
+        public string State {
+            get; set;
+        }
     }
 }

@@ -7,10 +7,26 @@
 <div class="text-center">
     <h1 class="display-3">Orders List</h1>
 </div>
-    @foreach(var order in Model.Orders) {
-        @order.From
-        @order.To
-        @order.Type
-        @order.Date
-        @order.Description
-    }
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Type</th>
+            <th scope="col">Date</th>
+            <th scope="col">Description</th>
+            <th scope="col">User</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var order in Model.Orders) {
+            <tr>
+                <td>@order.From</td>
+                <td>@order.To</td>
+                <td>@order.Type</td>
+                <td>@order.Date</td>
+                <td>@order.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>
