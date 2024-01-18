@@ -5,7 +5,7 @@ using Yandex.Cargo.Models;
 namespace Yandex.Cargo.Pages {
     [IgnoreAntiforgeryToken]
     public class CreateModel : PageModel {
-        readonly ApplicationContext context;
+        ApplicationContext context;
 
         [BindProperty]
         public Order Order { get; set; } = new();

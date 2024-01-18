@@ -88,7 +88,7 @@
                             <td class="p-2">@order.Description</td>
                             <td class="p-2">@order.State</td>
                             <form method="post">
-                            <td class=""><a class="ps-4 d-flex justify-content-start align-items-center link-secondary" asp-page="Edit" asp-route-id="@order.Id"><i class="bi bi-pencil"></i></a></td>
+                            <td class="p-2 pt-3"><a class="ps-4 d-flex justify-content-start align-items-center link-secondary" asp-page="Edit" asp-route-id="@order.Id"><i class="bi bi-pencil"></i></a></td>
                             <td><button class="btn btn-secondary" type="submit" asp-page-handler="delete" asp-route-id="@order.Id">Delete</button></td>
                             </form>
                         </tr>

@@ -5,10 +5,11 @@ using Yandex.Cargo.Models;
 namespace Yandex.Cargo.Pages {
     [IgnoreAntiforgeryToken]
     public class EditModel : PageModel {
-        readonly ApplicationContext context;
+
+        ApplicationContext context;
 
         [BindProperty]
-        public Order Order { get; set; }
+        public Order? Order { get; set; }
         public EditModel(ApplicationContext db) {
             context = db;
         }
