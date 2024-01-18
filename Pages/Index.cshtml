@@ -3,13 +3,12 @@
 @{
     ViewData["Title"] = "Home";
 }
-
 @if(@Model.Orders != null) {
     <div class="text-center mb-5">
         <h1 class="display-3">Orders List</h1>
     </div>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-striped">
         <thead class="pd-3">
             <tr>
                 <th class="p-2" scope="col">From</th>
@@ -38,7 +37,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Canceling order</h1>
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Canceling</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
@@ -46,18 +45,38 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button class="btn btn-secondary" type="submit" asp-page-handler="delete" asp-route-id="@order.Id">Enter</button>
+                                                <button class="btn btn-secondary" type="submit" asp-page-handler="delete" asp-route-id="@order.Id">Sure</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            <td><a asp-page="Edit" class="btn btn-secondary" asp-route-id="@order.Id">Edit</a></td>
                             </form>
                             <td>
                                 <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Cancel
                                 </button>
                             </td>
+                            <td>
+                                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                    Track
+                                </button>
+                            </td>
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Tracking</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            There will be stages of transporting your cargo!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </tr>
                         break;
                     case "in processing":
@@ -69,11 +88,9 @@
                             <td class="p-2">@order.Description</td>
                             <td class="p-2">@order.State</td>
                             <form method="post">
-                            <td class="px-4"><a asp-page="Edit" asp-route-id="@order.Id"><i class="bi bi-pencil"></i></a></td>
-
+                            <td class=""><a class="ps-4 d-flex justify-content-start align-items-center link-secondary" asp-page="Edit" asp-route-id="@order.Id"><i class="bi bi-pencil"></i></a></td>
                             <td><button class="btn btn-secondary" type="submit" asp-page-handler="delete" asp-route-id="@order.Id">Delete</button></td>
                             </form>
-
                         </tr>
                     break;
                 }
